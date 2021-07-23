@@ -16,7 +16,6 @@ pipeline {
            script{
            sh "pwd"
            sh '''
-             cd booking-app
              npm run test:ci
            '''
 
@@ -27,8 +26,8 @@ pipeline {
               steps{
                 echo 'Going to execute Code Coverage'
                 script{
-                      sh"cd booking-app"
-                      sh "npm coverage:prod"
+
+                      sh "npm run coverage:prod"
                 }
               }
            }
