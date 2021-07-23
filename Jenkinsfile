@@ -34,11 +34,18 @@ pipeline {
      stage('Sonar Coverage Analysis'){
            steps{
              echo 'Going to execute Sonar Coverage Analysis'
-             script{
-              def scannerHome = tool 'sonarqube-scanner';
-              sh "${scannerHome}/sonar-scanner -Dsonar.projectKey=BOOKING_APP -Dsonar.projectName=BookingApp  -Dsonar.language=js   -Dsonar.sources=./src  -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=cbb9c439aef22bfbffc0541e7831a43bb8882e31"
-             }
+//              script{
+//               def scannerHome = tool 'sonarqube-scanner';
+//               sh "${scannerHome}/sonar-scanner -Dsonar.projectKey=BOOKING_APP -Dsonar.projectName=BookingApp  -Dsonar.language=js   -Dsonar.sources=./src  -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=cbb9c439aef22bfbffc0541e7831a43bb8882e31"
+//              }
            }
         }
+     stage('Acceptance Pipeline Trigger'){
+               steps{
+                 echo 'Going to Trigger Acceptance Pipeline'
+                    build job: "AcceptancePipelineDemo", wait: false
+
+               }
+            }
    }
 }
