@@ -42,9 +42,5 @@ pipeline {
             sh "docker stop bookingapp"
         }
       }
-    }post {
-      failure {
-        sh "docker stop bookingapp"
-      }
     }
 }
