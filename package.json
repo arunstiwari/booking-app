@@ -24,7 +24,7 @@
     "eject": "react-scripts eject",
     "test:ci": "CI=true react-scripts test --env=jsdom",
     "ui:test": "cypress open",
-    "ui:testci": "cypress run",
+    "ui:testci": "./node_modules/.bin/cypress run",
     "coverage:dev": "react-scripts test --coverage --watchAll",
     "coverage:prod": "CI=true react-scripts test --coverage"
   },
