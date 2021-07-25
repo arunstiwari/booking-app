@@ -16,12 +16,12 @@ pipeline {
                 sh "docker run -d --name bookingapp -it --rm  -p3001:80  booking-app:1.0"
             }
         }
-        stage('Functional Testing') {
+     /*   stage('Functional Testing') {
             steps {
                 echo 'Executing Functional Testing'
                 sh "npm run ui:testci"
             }
-        }
+        }*/
        stage('Performance Testing') {
            steps {
                echo 'Executing Performance Testing'
