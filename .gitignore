@@ -2,6 +2,7 @@
 
 # dependencies
 *.jtl
+**/*.mp4
 /node_modules
 /.pnp
 .pnp.js

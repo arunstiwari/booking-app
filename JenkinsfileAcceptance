@@ -23,7 +23,11 @@ pipeline {
                 npm i
                 npm run ui:testci
                 '''
-            }
+            }post {
+                 always {
+                     junit 'results/cypress-report.xml'
+                 }
+             }
         }
        stage('Performance Testing') {
            steps {
