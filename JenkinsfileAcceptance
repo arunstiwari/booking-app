@@ -13,7 +13,7 @@ pipeline {
         stage('Start our docker container') {
             steps {
                 echo 'Starting our docker container'
-                sh "docker run --name bookingapp -it --rm  -p3001:80  booking-app:1.0"
+                sh "docker run -d --name bookingapp -it --rm  -p3001:80  booking-app:1.0"
             }
         }
         stage('Functional Testing') {
