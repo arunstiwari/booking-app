@@ -27,6 +27,11 @@ pipeline {
                echo 'Executing Performance Testing'
                sh "/Users/arunstiwari/Downloads/apache-jmeter-5.4.1/bin/jmeter -j jmeter.save.saveservice.output  -n -t ./bookable.jmx -l  bookables.jtl"
            }
+           post{
+                success{
+                    perfReport errorFailedThreshold: 26, errorUnstableThreshold: 26, filterRegex: '', showTrendGraphs: true, sourceDataFiles: 'bookables.jtl'
+                }
+           }
        }
       stage('Stop our docker container') {
         steps {
