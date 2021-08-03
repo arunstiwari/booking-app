@@ -41,6 +41,7 @@ pipeline {
                 }
            }
        }
+
       stage('Stop our docker container') {
         steps {
             echo 'Stopping our docker container'
